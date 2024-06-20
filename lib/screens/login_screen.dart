@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../auth_state.dart';
+import '../routes.dart';
 import 'package:modular_ui/modular_ui.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,12 +12,26 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Login Screen')),
       body: Center(
-        child: MUIPrimaryButton(
-          text: 'Login',
-          onPressed: () {
-            Provider.of<AuthState>(context, listen: false).login();
-            context.go('/');
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MUIPrimaryButton(
+              text: 'Login',
+              onPressed: () {
+                Provider.of<AuthState>(context, listen: false).login();
+                HomeRoute().go(context);
+              },
+            ),
+            const SizedBox(height: 16),
+            MUIPrimaryButton(
+              text: 'Login as Super User',
+              onPressed: () {
+                Provider.of<AuthState>(context, listen: false)
+                    .login(superUser: true);
+                HomeRoute().go(context);
+              },
+            ),
+          ],
         ),
       ),
     );

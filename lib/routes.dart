@@ -59,6 +59,15 @@ class Page2Route extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) {
     return const Page2Screen();
   }
+
+  @override
+  String? redirect(BuildContext context, GoRouterState state) {
+    final authState = Provider.of<AuthState>(context, listen: false);
+    if (!authState.isSuperUser) {
+      return Page1Route().location;
+    }
+    return null;
+  }
 }
 
 class UsersRoute extends GoRouteData {

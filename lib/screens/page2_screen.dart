@@ -13,7 +13,7 @@ class Page2Screen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('This is Page 2'),
+            const Text('Эта страница доступна только Super User'),
             const SizedBox(height: 16),
             MUIPrimaryButton(
               text: 'Back to Page 1',
