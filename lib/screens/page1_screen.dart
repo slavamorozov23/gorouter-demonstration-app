@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modular_ui/modular_ui.dart';
 
-import 'package:modular_ui/modular_ui.dart';
-
 class Page1Screen extends StatelessWidget {
   const Page1Screen({super.key});
 

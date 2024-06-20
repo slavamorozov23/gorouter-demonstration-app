@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:modular_ui/modular_ui.dart';
-
-import 'package:modular_ui/modular_ui.dart';
 
 class UsersScreen extends StatelessWidget {
   final String? filter;
