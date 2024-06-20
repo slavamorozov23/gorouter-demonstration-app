@@ -1,0 +1,5 @@
+package com.slavamorozov.gorouterdemonstrationapp
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
