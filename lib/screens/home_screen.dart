@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:modular_ui/modular_ui.dart';
 import 'package:provider/provider.dart';
 import '../auth_state.dart';
+import '../routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,22 +29,34 @@ class HomeScreen extends StatelessWidget {
           children: [
             MUIPrimaryButton(
               text: 'Go to Page 1',
-              onPressed: () => context.go('/page1'),
+              onPressed: () => Page1Route().go(context),
             ),
             const SizedBox(height: 16),
             MUIPrimaryButton(
               text: 'Go to Users',
-              onPressed: () => context.go('/users'),
+              onPressed: () => UsersRoute(filter: '').go(context),
             ),
             const SizedBox(height: 16),
             MUIPrimaryButton(
               text: 'Go to Details',
-              onPressed: () => context.go('/details'),
+              onPressed: () => DetailsRoute().go(context),
             ),
             const SizedBox(height: 16),
             MUIPrimaryButton(
               text: 'Go to Alternative Home',
-              onPressed: () => context.go('/alternative_home'),
+              onPressed: () => AlternativeHomeRoute().go(context),
+            ),
+            const SizedBox(height: 16),
+            MUIPrimaryButton(
+              text: 'Go to Users with Filter',
+              onPressed: () => UsersRoute(filter: 'special user').go(context),
+            ),
+            const SizedBox(height: 16),
+            MUIPrimaryButton(
+              text: 'Trigger Custom Error',
+              onPressed: () {
+                context.go('/error_example');
+              },
             ),
           ],
         ),
